@@ -1,12 +1,14 @@
+import React, { Fragment } from "react";
+import PropTypes from "prop-types"; // ES6
+
 /**
  * Functional react component for congratulatory meesage.
  * @function
  * @params {object} props - React props.
  * @returns {JSX.Element}  - React component (or null if ` success is false `)
  */
-import React, { Fragment } from "react";
 
-export default function Congrats(props) {
+const Congrats = (props) => {
   return (
     <Fragment>
       {props.success ? (
@@ -20,4 +22,10 @@ export default function Congrats(props) {
       )}
     </Fragment>
   );
-}
+};
+
+Congrats.propTypes = {
+  success: PropTypes.bool.isRequired,
+};
+
+export default Congrats;
